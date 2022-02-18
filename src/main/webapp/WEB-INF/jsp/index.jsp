@@ -42,8 +42,8 @@
                              <br>
                      </tr>--%>
 
-                    <div style="display: flex; flex-direction: column;  width: 30%; height: 300px; margin: 0 auto;
-                                       background-color: wheat; ">
+                    <div style="display: flex; flex-direction: column;  width: 250px; height: 350px; margin: 0 auto;
+                                       background-color: ghostwhite; border: 3px inset lightgoldenrodyellow; align-items: center;">
                         <div>
                             ${pizza.name}
                         </div>
