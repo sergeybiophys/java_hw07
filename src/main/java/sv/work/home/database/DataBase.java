@@ -12,7 +12,7 @@ public class DataBase {
     private static List<Pizza> pizzas = new ArrayList<Pizza>(Arrays.asList(
             new Pizza("Four Cheeses", "/webapp/resources/images/pizza-4-sira.png",230.0f)
     ));
-    public static List<Pizza> GetAll(){
+    public static List<Pizza> getAll(){
         return  pizzas;
     }
     public static void addPizza(Pizza pizza)

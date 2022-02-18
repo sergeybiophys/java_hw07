@@ -1,5 +1,6 @@
 
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="sv.work.home.database.DataBase" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -14,6 +15,10 @@
     <div style="display: flex;  width: 80%; margin: 0 auto; justify-content: center;">
         <h1>Pizza App </h1>
         <div>
+            <%
+               request.setAttribute("pizzas",DataBase.getAll());
+            %>
+
 <%--            <c:if test="${requestScope.pizzas.size()>0}">--%>
 
 <%--
@@ -25,7 +30,7 @@
 
 <%--    https://betacode.net/10429/java-jsp-standard-tag-library#a1264566--%>
 
-                <c:forEach items="${requestScope.get(pizzas)}" var="pizza" varStatus="status">
+                <c:forEach var="pizza" items="${pizzas}">
                     <h1>10</h1>
 
                     <%-- <tr>
