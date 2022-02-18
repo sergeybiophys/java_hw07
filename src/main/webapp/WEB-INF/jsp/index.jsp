@@ -11,11 +11,12 @@
     <title>Pizza</title>
 </head>
 <body>
-<main style="display: flex;  width: 80%; height: 500px; margin: 0 auto; ">
-    <div style="display: flex; flex-direction: column;  width: 80%; margin: 0 auto; justify-content: center;">
-        <div>
-            <h1>Pizza App </h1>
-        </div>
+<div>
+    <h1>Pizza App </h1>
+</div>
+
+<main style="display: flex;  width: 100%; height: 500px; margin: 0 auto; ">
+    <div style="display: flex; flex-direction: row;  justify-content: space-between;">
 
             <%
                request.setAttribute("pizzas",DataBase.getAll());
@@ -42,16 +43,16 @@
                              <br>
                      </tr>--%>
 
-                    <div style="display: flex; flex-direction: column;  width: 250px; height: 350px; margin: 0 auto;
+                    <div style="display: flex; flex-wrap:wrap; flex-direction: column;  width: 200px; height: 300px; margin: 0 auto;
                                        background-color: ghostwhite; border: 3px inset lightgoldenrodyellow; align-items: center;">
-                        <div>
+                        <div style="margin-top: 5px;">
                             ${pizza.name}
                         </div>
                         <div>
                             <img src="${pageContext.request.contextPath}${pizza.image}" height="200" width="200" alt="..."/>
                         </div>
                         <div>
-                            ${pizza.price}
+                            ${pizza.price}GRN
                         </div>
 
                     </div>
