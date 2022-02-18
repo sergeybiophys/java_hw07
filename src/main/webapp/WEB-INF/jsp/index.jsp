@@ -11,10 +11,12 @@
     <title>Pizza</title>
 </head>
 <body>
-<main>
-    <div style="display: flex;  width: 80%; margin: 0 auto; justify-content: center;">
-        <h1>Pizza App </h1>
+<main style="display: flex;  width: 80%; height: 500px; margin: 0 auto; ">
+    <div style="display: flex; flex-direction: column;  width: 80%; margin: 0 auto; justify-content: center;">
         <div>
+            <h1>Pizza App </h1>
+        </div>
+
             <%
                request.setAttribute("pizzas",DataBase.getAll());
             %>
@@ -31,7 +33,7 @@
 <%--    https://betacode.net/10429/java-jsp-standard-tag-library#a1264566--%>
 
                 <c:forEach var="pizza" items="${pizzas}">
-                    <h1>10</h1>
+
 
                     <%-- <tr>
                              <td>${task.count}</td>
@@ -40,14 +42,22 @@
                              <br>
                      </tr>--%>
 
-                    <div style="display: flex;  width: 30%; margin: 0 auto;
-                                         background-color: lightblue; height: 35px; justify-content: space-around; margin-bottom: 0.2em;">
-                        <div>${pizza.name}</div>
+                    <div style="display: flex; flex-direction: column;  width: 30%; height: 300px; margin: 0 auto;
+                                       background-color: wheat; ">
+                        <div>
+                            ${pizza.name}
+                        </div>
+                        <div>
+                            <img src="${pageContext.request.contextPath}${pizza.image}" height="200" width="200" alt="..."/>
+                        </div>
+                        <div>
+                            ${pizza.price}
+                        </div>
 
                     </div>
                 </c:forEach>
 <%--            </c:if>--%>
-        </div>
+
     </div>
 </main>
 
