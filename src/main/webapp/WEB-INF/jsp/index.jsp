@@ -7,6 +7,7 @@
 <head>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <%--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">--%>
     <style>
         div.pizza-card:hover {
@@ -53,8 +54,8 @@
                          <td>  <fmt:formatDate pattern="yyyy-MM-dd" value="${task.date}" /></td>
                          <br>
                  </tr>--%>
-                <a href="/form" class="block">
-                    <div class="pizza-card" name="${pizza.name}" id="pizza${pizza.id}" style="display: flex; flex-direction: column; width: 250px; height: 400px;
+               <%-- <a href="/form" class="block">--%>
+                    <div class="pizza-card" name="${pizza.name}" id="${pizza.id}" style="display: flex; flex-direction: column; width: 250px; height: 400px;
                                        background-color: ghostwhite; border: 3px inset lightgoldenrodyellow; align-items: center;">
                         <div style="margin-top: 5px;">
                             <h3>${pizza.name}</h3>
@@ -67,7 +68,32 @@
                         </div>
 
                     </div>
-                </a>
+                <%--</a>--%>
+                <script>
+                    $(".pizza-card").click(function (){
+                       /* let postData = {"pizzaName":${pizza.name}};
+                        $.ajax({
+                            type: "POST",
+                            url: '/form',
+                            data: postData,
+                            dataType: "json",
+                            processdata: true,
+                            success: function (response){
+                                $('#${pizza.id}').attr('pzName','${pizza.name}');
+                                $('#${pizza.id}').attr('pzPrice','${pizza.price}');
+
+                            },
+                            error: function (error){
+
+                            }
+
+                        });*/
+                        localStorage['pzName']='${pizza.name}';
+;
+
+                        window.location.href = '/form';
+                    });
+                </script>
 
 
             </c:forEach>
