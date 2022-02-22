@@ -2,6 +2,7 @@ package sv.work.home.database;
 
 import lombok.Data;
 import sv.work.home.entity.Pizza;
+import sv.work.home.entity.Topping;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,6 +16,14 @@ public class DataBase {
             new Pizza("Vegetarian", "/resources/images/pizza-vegetae.png",180.0f),
             new Pizza("Hawaiian", "/resources/images/pizza-gavaiskaia.png",270.0f)
     ));
+    private static List<Topping> toppings = new ArrayList<Topping>(Arrays.asList(
+            new Topping("Olive",5.0f),
+            new Topping("Tomato",1.0f),
+            new Topping("Jalapeno ",8.0f),
+            new Topping("Mushroom",4.0f),
+            new Topping("Sausage",11.0f)
+
+            ));
     public static List<Pizza> getAll(){
         return  pizzas;
     }
@@ -22,4 +31,7 @@ public class DataBase {
     {
         pizzas.add(pizza);
     }
+
+    public static List<Topping> getToppings(){return toppings;}
+    public static void addTopping(Topping topping){toppings.add(topping);}
 }

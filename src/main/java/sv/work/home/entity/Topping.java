@@ -9,4 +9,9 @@ public class Topping {
     private String name;
     private Float price;
 
+    public Topping(String name, Float price){
+        this.name = name;
+        this.price = price;
+    }
+
 }
