@@ -13,9 +13,19 @@
     <servlet-class>sv.work.home.servlet.HomeServlet</servlet-class>
   </servlet>
   
+  <servlet>
+    <servlet-name>orderServlet</servlet-name>
+    <servlet-class>sv.work.home.servlet.MakeOrderServlet</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
     <servlet-name>homeServlet</servlet-name>
     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>orderServlet</servlet-name>
+    <url-pattern>/form</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

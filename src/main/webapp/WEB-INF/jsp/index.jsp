@@ -8,15 +8,25 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">--%>
+    <style>
+        div.pizza-card:hover {
+            background-color: lightsteelblue!important;
+            transform: scale(110%);
+        }
+        div.pizza-card {
+
+        }
+
+    </style>
     <title>Pizza</title>
 </head>
 <body>
-<div>
+<div style="display: flex; flex-wrap: wrap;justify-content: center">
     <h1>Pizza App </h1>
 </div>
 
 <main >
-    <div style="display: flex; flex-wrap: wrap; width: 80%; margin: 0 auto; height: 500px;  background-color: black; justify-content: space-around;">
+    <div style="display: flex; flex-wrap: wrap; width: 80%; margin: 0 auto; height: 800px;  background-color: black; justify-content: space-around;">
 
 
             <%
@@ -43,20 +53,23 @@
                          <td>  <fmt:formatDate pattern="yyyy-MM-dd" value="${task.date}" /></td>
                          <br>
                  </tr>--%>
-
-                <div style="display: flex; flex-direction: column; width: 250px; height: 350px;
+                <a href="/form" class="block">
+                    <div class="pizza-card" name="${pizza.name}" id="pizza${pizza.id}" style="display: flex; flex-direction: column; width: 250px; height: 400px;
                                        background-color: ghostwhite; border: 3px inset lightgoldenrodyellow; align-items: center;">
-                    <div style="margin-top: 5px;">
-                            ${pizza.name}
-                    </div>
-                    <div>
-                        <img src="${pageContext.request.contextPath}${pizza.image}" height="190px" width="190px" alt="..."/>
-                    </div>
-                    <div>
-                            ${pizza.price}GRN
-                    </div>
+                        <div style="margin-top: 5px;">
+                            <h3>${pizza.name}</h3>
+                        </div>
+                        <div>
+                            <img src="${pageContext.request.contextPath}${pizza.image}" height="190px" width="190px" alt="..."/>
+                        </div>
+                        <div>
+                                ${pizza.price}GRN
+                        </div>
 
-                </div>
+                    </div>
+                </a>
+
+
             </c:forEach>
             <%--            </c:if>--%>
 
