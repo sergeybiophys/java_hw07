@@ -17,45 +17,42 @@
   <title>Order Form</title>
 </head>
 <body>
-<div style="text-align: center;">
+<%--<div style="text-align: center;">
 
-    <h4 id='pzName'>
+    <h4 id='pzName'></h4>
+    <h3 id='pzPrice'></h3>
 
-    </h4>
+</div>--%>
 
-</div>
 
-<div style="text-align: center">
-    <h4>Specify additional toppings if necessary </h4>
-</div>
     <%
         request.setAttribute("toppings", DataBase.getToppings());
     %>
     <div style="display: flex;flex-direction: column; background-color: azure;">
-        <c:forEach var="topping" items="${toppings}">
+       <%-- <c:forEach var="topping" items="${toppings}">
 
 
-            <%-- <tr>
+            &lt;%&ndash; <tr>
                      <td>${task.count}</td>
 
                      <td>  <fmt:formatDate pattern="yyyy-MM-dd" value="${task.date}" /></td>
                      <br>
-             </tr>--%>
+             </tr>&ndash;%&gt;
 
             <div class="topping-card" name="${topping.name}" id="topping${topping.name}" style="display: flex; flex-direction: row;
             justify-content: center; text-align: center; border: 2px solid black;">
                 <div >
                     <h5 style="color: black;">${topping.name}</h5>
                 </div>
-                    <%--                <div>
+                    &lt;%&ndash;                <div>
                                         <img src="${pageContext.request.contextPath}${pizza.image}" height="190px" width="190px" alt="..."/>
-                                    </div>--%>
+                                    </div>&ndash;%&gt;
 
                 <div>
                     <input  type="checkbox"/>
                 </div>
                 <div>
-                    <input type="number"/>
+                    <input type="number" min="0"/>
                 </div>
                 <div style="color: black">
                     <h5>${topping.price}GRN</h5>
@@ -65,20 +62,35 @@
 
 
 
-        </c:forEach>
+        </c:forEach>--%>
     </div>
 
 
-<div style="text-align: center">
-  <h3>Fill the form</h3>
-</div>
+
 <div style="display: flex; justify-content: center">
 
+
   <form method='post' action='/add'>
+      <label id='pzName'>Pizza: </label><br/>
+      <input  name='pzPrice' type='number' value='0'>
+      <label>Test: <input type="number"></label><br/>
+      <div style="text-align: center">
+          <h4>Specify additional toppings if necessary </h4>
+      </div>
+      <c:forEach var="topping" items="${toppings}">
+
+          <label>${topping.name.toUpperCase()} <input name='${topping.name}' type='number' min='0' value='0' />
+              <label>${topping.price}GRN</label>
+          </label><br/>
+
+      </c:forEach>
+      <div style="text-align: center">
+          <h3>Fill the form</h3>
+      </div>
     <label>Name:    <input   name='name'/></label><br/>
-    <label>Email:   <input name='email' type="email" /></label><br/>
-    <label>Mobile:  <input  name='mobile' type="tel" /></label><br/>
-    <label>Address: <input name='address' type="text"/></label><br/>
+    <label>Email:   <input   name='email' type="email" /></label><br/>
+    <label>Mobile:  <input   name='mobile' type="tel" /></label><br/>
+    <label>Address: <input   name='address' type="text"/></label><br/>
 <%--    <label>Group:
       <select name="group">
         <%
@@ -100,5 +112,5 @@
 </html>
 <script>
     document.getElementById('pzName').textContent=localStorage.pzName;
-
+   /* document.getElementById('pzPrice').textContent=localStorage.pzPrice;*/
 </script>

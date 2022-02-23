@@ -89,6 +89,7 @@
 
                         });*/
                         localStorage['pzName']='${pizza.name}';
+                        localStorage['pzPrice']='${pizza.price}';
 ;
 
                         window.location.href = '/form';

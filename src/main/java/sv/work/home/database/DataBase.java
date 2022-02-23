@@ -17,11 +17,11 @@ public class DataBase {
             new Pizza("Hawaiian", "/resources/images/pizza-gavaiskaia.png",270.0f)
     ));
     private static List<Topping> toppings = new ArrayList<Topping>(Arrays.asList(
-            new Topping("Olive",5.0f),
-            new Topping("Tomato",1.0f),
-            new Topping("Jalapeno ",8.0f),
-            new Topping("Mushroom",4.0f),
-            new Topping("Sausage",11.0f)
+            new Topping("olive",5.0f),
+            new Topping("tomato",1.0f),
+            new Topping("jalapeno ",8.0f),
+            new Topping("mushroom",4.0f),
+            new Topping("sausage",11.0f)
 
             ));
     public static List<Pizza> getAll(){
